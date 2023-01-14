@@ -2,7 +2,7 @@ name: Greenwoods
 version: '${project.version}'
 main: Greenwoods.Greenwoods
 api-version: 1.19
-authors: [ justandii ]
+authors: [ Elias, JustAndii, Gregzee ]
 description: A room for all mini projects of "greenwoods.at"
 website: greenwoods.at
 
