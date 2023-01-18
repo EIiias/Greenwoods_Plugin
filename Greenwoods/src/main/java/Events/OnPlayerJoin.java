@@ -25,21 +25,59 @@ public class OnPlayerJoin implements Listener {
         }
     }
 
+    //Buch für Anfänger
     public static ItemStack getManual() {
         ItemStack manual = new ItemStack(Material.WRITTEN_BOOK);
         BookMeta manualMeta = (BookMeta) manual.getItemMeta();
 
-        manualMeta.setAuthor(ChatColor.GOLD + "Greenwoods");
-        manualMeta.setTitle(ChatColor.GOLD + "Spieler Handbuch / How to play");
-        manualMeta.addPage(ChatColor.BOLD.toString() + ChatColor.DARK_PURPLE + "Index\n\n" + ChatColor.RESET + ChatColor.BLACK + "Chunk claimen S2-S3\nJobs plugin S2-S3");
-        manualMeta.addPage( ChatColor.BOLD.toString() + ChatColor.DARK_PURPLE + "Chunk claimen:\n\n" + ChatColor.RESET + ChatColor.BLACK + "Mit /chunkclaim kannst du einen Chunk claimen " +
-                "Der erste ist Gratis jeder weitere kostet dich 1,500 Woodcoins " +
-                "In diesem gecliamten Chunk kann niemand außer du Blöcke abbauen oder Kisten öffnen. " +
-                "Falls du einem anderen Spieler diese Dinge erlauben willst kannst du das einfach mit" +
-                " /chunk access [Playername] tun.");
-        manualMeta.addPage("Falls du einem anderen Spieler diese Dinge erlauben willst kannst du das einfach mit" +
-                " /chunk access [Playername] tun. Sobald du den Command nochmal ausführst werden die Rechte entfernt");
-        manualMeta.addPage("");
+
+    //Author/Titel/Inhaltsverzeichnis
+        manualMeta.setAuthor(
+                ChatColor.GOLD + "Greenwoods"
+        );
+
+        manualMeta.setTitle(
+                ChatColor.GOLD + "Spieler Handbuch / How to play"
+        );
+
+        manualMeta.addPage(
+                ChatColor.DARK_PURPLE + ChatColor.BOLD.toString() + "Inhaltsverzeichnis\n\n" + ChatColor.RESET +
+                "-Chunk claimen S2-S3\n-Jobs plugin S2-S3"
+        );
+
+    //Chunks
+        manualMeta.addPage(
+                ChatColor.DARK_PURPLE + ChatColor.BOLD.toString() + "Chunks claimen:\n\n" + ChatColor.RESET +
+                "Mit " + ChatColor.BOLD + "/chunk claim" + ChatColor.RESET + " kannst du einen Chunk claimen. " +
+                "Dieser Chunk ist dann dein Gründstück auf welchem nur du Rechte besitzt. " +
+                "Der erste Chunk ist Gratis, jeder weitere kostet dich 1,500 Woodcoins. "
+        );
+
+        manualMeta.addPage(
+                "In dem von dir erworbenen Chunk kann niemand außer dir Blöcke abbauen oder Kisten öffnen. " +
+                "Um einem anderen Spieler Berechtigungen an deinem Grunstück erteilen oder zu entehmen, " +
+                "gibst du folgenden Befehl ein: " +
+                ChatColor.BOLD + "/chunk access [Playername]" + ChatColor.RESET
+        );
+
+    // Jobs
+        manualMeta.addPage(
+                ChatColor.DARK_PURPLE + ChatColor.BOLD.toString() + "Jobs:\n\n" + ChatColor.RESET +
+                "Mit dem Befehl\n" + ChatColor.BOLD +  "/job list " + ChatColor.RESET + ",listest du alle Jobs auf. " +
+                "Anschließend kannst du mit\n" + ChatColor.BOLD + "/job select [Job] " + ChatColor.RESET +
+                "dir einen Job auswählen. " + "Mit Hilfe der Jobs kannst du Geld verdienen (Woodcoins)"
+        );
+
+        manualMeta.addPage(
+                "Falls du deinen Job wechseln möchtest," +
+                "kannst du dir bei einem Dorfbewohner einen Token zum Job wechsel kaufen. "
+        );
+
+    //Invisible Itemframes
+        manualMeta.addPage(
+                "[In Progress]"
+        );
+
 
         manual.setItemMeta(manualMeta);
 
