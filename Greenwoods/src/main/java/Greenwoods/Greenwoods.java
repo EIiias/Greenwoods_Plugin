@@ -6,6 +6,8 @@ import Commands.CountdownCommand;
 import Economy.Vault;
 import Events.*;
 import Timer.Timer;
+import org.bukkit.Bukkit;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Greenwoods extends JavaPlugin {
@@ -33,12 +35,14 @@ public final class Greenwoods extends JavaPlugin {
         getCommand("greenwoods").setExecutor(new GreenwoodsCommand());
 
         //Register events
-        getServer().getPluginManager().registerEvents(new OnPlayerJoin(), this);
-        getServer().getPluginManager().registerEvents(new OnPlayerQuit(), this);
-        getServer().getPluginManager().registerEvents(new OnPlayerEntityInteract(), this);
-        getServer().getPluginManager().registerEvents(new OnPlayerMove(), this);
-        getServer().getPluginManager().registerEvents(new OnInventoryClick(), this);
-        getServer().getPluginManager().registerEvents(new OnInventoryClose(), this);
+        PluginManager pluginManager = Bukkit.getPluginManager();
+
+        pluginManager.registerEvents(new OnPlayerJoin(), this);
+        pluginManager.registerEvents(new OnPlayerQuit(), this);
+        pluginManager.registerEvents(new OnPlayerEntityInteract(), this);
+        pluginManager.registerEvents(new OnPlayerMove(), this);
+        pluginManager.registerEvents(new OnInventoryClick(), this);
+        pluginManager.registerEvents(new OnInventoryClose(), this);
 
         //Create new timer instance
         timerInstance = new Timer(false, 0);
