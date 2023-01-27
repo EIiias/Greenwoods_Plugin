@@ -1,5 +1,6 @@
 package Events;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -17,11 +18,12 @@ public class OnPlayerJoin implements Listener {
             e.setJoinMessage(ChatColor.GREEN + p.getName() + ChatColor.WHITE + " ist aufgewacht!");
             return;
         }else {
-            p.sendMessage(ChatColor.GREEN+ "Willkommen, " + p.getName() + " auf " + ChatColor.GOLD+ "Greenwoods.at!");
+            p.sendMessage(ChatColor.GREEN+ "Willkommen, " + p.getName() + " auf " + ChatColor.GOLD + "Greenwoods.at!");
             p.sendMessage(ChatColor.GREEN + "Viel Spaß und viel Erfolg!");
             p.getInventory().addItem(getManual());
             p.sendMessage(ChatColor.GREEN + "Das Spielerhandbuch kannst du jederzeit mittels /Greenwoods wieder erhalten");
             e.setJoinMessage(ChatColor.GREEN + p.getName() + ChatColor.WHITE + " wurde an Ufer gespült...");
+            p.chat("/crawl");
         }
     }
 
