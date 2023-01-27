@@ -6,7 +6,7 @@ Build/Package Instructions:
 
 For Intellij
 
-Open the Greenwoods directory in Intellij
+Open the Project directory in Intellij
 Add a "Run/Debug Configuration"
 Add Maven
 Add ```clean package``` into the run text box
